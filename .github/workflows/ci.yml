@@ -1,0 +1,15 @@
+name: Run Flake8
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  flake8:
+    name: Flake8
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Flake8
+        run:
+          python -m flake8 .
